@@ -27,7 +27,7 @@ public class ObjectsCourse {
         Square squareabcd = new Square();
         squareabcd.setSide(5);
         squareabcd.printCurrentSquare();
-        System.out.println("Square with side "+ squareabcd.squareSide + " has area of "+ squareabcd.getArea());
+        System.out.println("Square with side "+ squareabcd.side + " has area of "+ squareabcd.getArea());
 
         for(String value : args){
             Square cmdSquare = new Square();
