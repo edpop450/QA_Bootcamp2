@@ -2,7 +2,7 @@ import java.util.*;
 
 public class CollectionsExercises {
 
-    public static HashMap<Character, Integer> main(String[] args) {
+    public static void main(String[] args) {
 
         int[] numbers = {1, 5, 8, 89};
         Shape[] shapes = {new Circle(), new Triangle(), new Rectangle()};
@@ -68,7 +68,6 @@ public class CollectionsExercises {
 
         String inputText = "Are are mere si pere si struguri. Toamna e frumos pentru ca nu e inca frig.";
         printCharFrequency(computeMapFromString(inputText, true));
-        return null;
     }
         public static HashMap<Character, Integer> computeMapFromString(String text, boolean caseSensitive){
         HashMap<Character,Integer> charMap = new HashMap<>();
