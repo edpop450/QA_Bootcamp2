@@ -2,6 +2,7 @@ import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;
 import com.aventstack.extentreports.Status;
 import com.aventstack.extentreports.reporter.ExtentSparkReporter;
+import org.junit.jupiter.api.Assertions;
 import org.testng.Assert;
 import org.testng.ITestContext;
 import org.testng.annotations.*;
@@ -15,6 +16,7 @@ public class CalculatorNgTest {
 
     Calculator c;
     final String additionFailMessage = "Addition failed.";
+    final String multiplicationFailMessage ="Multiplication failed";
     ExtentReports extent = new ExtentReports();;
     ITestContext testContext;
 
@@ -34,6 +36,16 @@ public class CalculatorNgTest {
         dp.add(new Object[] {1000, 555, 445, "+", additionFailMessage});
         dp.add(new Object[] {1, 1 , 0 , "+", additionFailMessage});
         return dp.iterator();
+    }
+
+    @DataProvider
+    public Object[][] multiplicationDataProvider(){
+        return new Object[][]{
+                {500,50,10,"*",multiplicationFailMessage},
+                {5000,500,10,"*",multiplicationFailMessage},
+                {12,3,4,"*",multiplicationFailMessage},
+                {29.4,2.94,10,"*",multiplicationFailMessage},
+        };
     }
 
     private void setupGeneric() {
@@ -105,6 +117,15 @@ public class CalculatorNgTest {
         ExtentTest mytest = extent.createTest(new Object(){}.getClass().getEnclosingMethod().getName());
         Assert.assertEquals(exp, c.compute(d1, d2, op), message);
         mytest.pass("test finished");
+    }
+    @Test
+    public void testAdditionWithDecimals(){
+        Assertions.assertEquals(c.compute(5.5,6.4,"+"),11.9,"Addition with decimals failed.");
+    }
+
+    @Test
+    public void testLargeNumberMultiplications(){
+        Assertions.assertEquals(c.compute(10e6,2e6,"*"),2e13,"Large number multiplications failed.");
     }
 
     private void cleanUpGeneric() {

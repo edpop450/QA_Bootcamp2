@@ -1,5 +1,6 @@
 import org.junit.jupiter.api.*;
 
+
 public class CalculatorTest {
 
     Calculator c;
@@ -60,6 +61,16 @@ public class CalculatorTest {
     @Test
     public void testSquareRoot02(){
         Assertions.assertEquals(Math.sqrt(2), c.compute(2, 0, "SQRT"), "SQRT failed.");
+    }
+
+    @Test
+    public void testDivisionWithNegativeNumbers(){
+        Assertions.assertEquals(c.compute(-10,5,"/"),2,"Division with negative number failed.");
+    }
+
+    @Test
+    public void testSquareRootOfNegativeNumbers(){
+        Assertions.assertEquals(c.compute(-49,0,"SQRT"),7,"SQRT of negative numbers failed.");
     }
 
     @AfterEach
