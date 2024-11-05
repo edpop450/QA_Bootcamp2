@@ -1,3 +1,6 @@
+package Others;
+import Calculator.*;
+
 import org.junit.jupiter.api.*;
 
 
@@ -65,12 +68,12 @@ public class CalculatorTest {
 
     @Test
     public void testDivisionWithNegativeNumbers(){
-        Assertions.assertEquals(c.compute(-10,5,"/"),2,"Division with negative number failed.");
+        Assertions.assertEquals(c.compute(-10,5,"/"),-2,"Division with negative number failed.");
     }
 
     @Test
     public void testSquareRootOfNegativeNumbers(){
-        Assertions.assertEquals(c.compute(-49,0,"SQRT"),7,"SQRT of negative numbers failed.");
+        Assertions.assertEquals(c.compute(-49,0,"SQRT"),"NaN","SQRT of negative numbers failed.");
     }
 
     @AfterEach
