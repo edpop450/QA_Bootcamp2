@@ -5,6 +5,7 @@ import juiceShop.frameworkUtils.Utils;
 import juiceShop.pages.LoginPage;
 import juiceShop.pages.RegistrationPage;
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.testng.Assert;
@@ -16,6 +17,7 @@ import org.testng.annotations.Test;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.NoSuchElementException;
 
 public class RegisterTest extends BaseTest{
 
@@ -29,10 +31,19 @@ public class RegisterTest extends BaseTest{
     @Test(dataProvider = "RegistrationDataProvider")
     public void loginRegister2(String username, String password, String securityAns) {
         driver.get(baseUrl + "/#/login");
+
         LoginPage lp = new LoginPage(driver);
         lp.awaitDismissModal();
+
+        try {
+            driver.findElement(By.cssSelector(".mat-snack-bar-container .mat-button")).click();
+        } catch (NoSuchElementException ignored) {
+            // Element not present, continue without further action
+        }
+
         lp.newUser();
         RegistrationPage rp = new RegistrationPage(driver);
+
         Assert.assertEquals(rp.getRegisterHeader(), rp.getRegisterPageStatic());
         rp.register(username, password, securityAns);
     }

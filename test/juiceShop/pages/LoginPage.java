@@ -43,7 +43,7 @@ public class LoginPage extends BasePage {
     }
 
     public void awaitDismissModal() {
-        Utils.waitForElement(driver, 10, By.cssSelector(MODAL_SELECTOR)).click();
+        Utils.waitForElement(driver, 3, By.cssSelector(MODAL_SELECTOR)).click();
     }
 
     public void newUser() {
