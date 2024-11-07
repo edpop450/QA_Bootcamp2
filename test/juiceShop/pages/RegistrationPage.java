@@ -1,6 +1,7 @@
 package juiceShop.pages;
 
 import org.openqa.selenium.By;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import juiceShop.frameworkUtils.Utils;
@@ -54,6 +55,10 @@ public class RegistrationPage extends BasePage {
 
         WebElement cookiesButton = driver.findElement(By.cssSelector(COOKIES_MODAL));
         cookiesButton.click();
+
+
+       // Utils.scrollDown(driver);
+        Utils.scrollToElement(driver, cookiesButton);
 
         WebElement submitButton = Utils.waitForElementClickable(driver, 10, By.id(REGISTER_SUBMIT_BUTTON));
         submitButton.click();
