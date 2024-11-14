@@ -57,7 +57,7 @@ public class RegistrationPage extends BasePage {
         cookiesButton.click();
 
 
-       // Utils.scrollDown(driver);
+       // frameworkUtils.Utils.scrollDown(driver);
         Utils.scrollToElement(driver, cookiesButton);
 
         WebElement submitButton = Utils.waitForElementClickable(driver, 10, By.id(REGISTER_SUBMIT_BUTTON));
