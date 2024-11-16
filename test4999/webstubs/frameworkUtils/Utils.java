@@ -127,6 +127,11 @@ public class Utils {
         js.executeScript("arguments[0].scrollIntoView(true);",element);
     }
 
+    public static void scrollInScrollableField(WebDriver driver, WebElement scrollableElement, int x, int y ){
+        JavascriptExecutor js = (JavascriptExecutor) driver;
+        js.executeScript("arguments[0].scrollBy(arguments[1],arguments[2]);", scrollableElement,x, y);
+    }
+
     public static void printCookies(WebDriver driver){
         Set<Cookie> cookies = driver.manage().getCookies();
         for(Cookie c : cookies){

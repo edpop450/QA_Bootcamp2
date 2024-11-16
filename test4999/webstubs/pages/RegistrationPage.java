@@ -56,8 +56,11 @@ public class RegistrationPage extends BasePage {
 
         driver.findElement(By.xpath(TITLE_BOX)).click();
         driver.findElement(By.xpath(DATE_OF_BIRTH)).sendKeys(dateofbirth);
+        WebElement scrollableDiv = driver.findElement(By.id("scrollable_div"));
 
+        scrollInScrollableField(driver,scrollableDiv,0,400);
         driver.findElement(By.xpath(NATIONALITY)).click();
+
         //scrollToElement(driver, );
         driver.findElement(By.xpath(TERMS_CONDITIONS)).click();
         driver.findElement(By.xpath(REGISTER_SUBMIT_BUTTON)).click();

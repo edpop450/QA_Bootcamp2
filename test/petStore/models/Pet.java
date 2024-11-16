@@ -7,12 +7,12 @@ import lombok.Setter;
 
 import java.util.ArrayList;
 
-@Getter @Setter @NoArgsConstructor @AllArgsConstructor
-public class Pet {
+@Getter @Setter @AllArgsConstructor @NoArgsConstructor
+public class Pet{
     private int id;
-    private Category cat;
+    private Category category;
     private String name;
-    private ArrayList<String> photoURLS;
+    private ArrayList<String> photoUrls;
     private ArrayList<Tag> tags;
     private String status;
 }
