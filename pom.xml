@@ -19,7 +19,8 @@
         <hamcrestVersion>3.0</hamcrestVersion>
         <jsonVersion>20240303</jsonVersion>
         <gsonVersion>2.9.0</gsonVersion>
-        <suiteFile>testSuites\runSuites.xml</suiteFile>
+        <suiteFile>testSuites/juiceShopSuite.xml</suiteFile>
+        <surefireRunnerVersion>3.5.2</surefireRunnerVersion>
     </properties>
 
     <dependencies>
@@ -87,7 +88,11 @@
             <artifactId>gson</artifactId>
             <version>${gsonVersion}</version>
         </dependency>
-
+        <dependency>
+            <groupId>org.apache.maven.surefire</groupId>
+            <artifactId>surefire-junit47</artifactId>
+            <version>${surefireRunnerVersion}</version>
+        </dependency>
 
     </dependencies>
 
@@ -102,7 +107,18 @@
                         <suiteXmlFiles>
                             <suiteXmlFile>${suiteFile}</suiteXmlFile>
                         </suiteXmlFiles>
+                        <properties>
+                            <name>listener</name>
+                            <value>customReporting.CustomTestListener, customReporting.CustomTestReporter</value>
+                        </properties>
                     </configuration>
+                    <dependencies>
+                        <dependency>
+                        <groupId>org.apache.maven.surefire</groupId>
+                        <artifactId>surefire-testng</artifactId>
+                        <version>${surefireRunnerVersion}</version>
+                        </dependency>
+                    </dependencies>
                 </plugin>
             </plugins>
         </pluginManagement>

@@ -7,7 +7,7 @@ import org.testng.annotations.BeforeMethod;
 
 public class BaseTest {
 
-    protected static String petStoreBaseUrl = Utils.getConfigProperty("petStoreUrl");
+    protected static String petStoreBaseUrl = Utils.getConfigProperty("petStoreURL");
     protected RequestSpecification httpRequest;
 
     @BeforeMethod
