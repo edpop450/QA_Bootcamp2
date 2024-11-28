@@ -24,12 +24,12 @@
      <test name="PetStore - Pet Tests" verbose="1" />
     <test name="PetTest" >
         <classes>
-            <class name="petStore.PetTest" />
+            <class name="test.PetTest" />
         </classes>
     </test>
     <test name="PetStore - User Tests" >
         <classes>
-            <class name="petStore.UserTest" />
+            <class name="test.UserTest" />
         </classes>
     </test>
 </suite>

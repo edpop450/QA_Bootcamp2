@@ -7,12 +7,12 @@
     </listeners>
     <test name="PetTest" >
         <classes>
-            <class name="petStore.PetTest" />
+            <class name="petStore.test.PetTest" />
         </classes>
     </test>
     <test name="User Tests" >
         <classes>
-            <class name="petStore.UserTest" />
+            <class name="petStore.test.UserTest" />
         </classes>
     </test>
 </suite>

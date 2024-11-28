@@ -1,4 +1,4 @@
-package petStore;
+package petStore.test;
 
 import com.google.gson.Gson;
 import io.restassured.http.Method;

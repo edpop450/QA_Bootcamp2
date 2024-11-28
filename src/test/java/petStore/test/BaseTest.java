@@ -1,4 +1,4 @@
-package petStore;
+package petStore.test;
 
 import io.restassured.RestAssured;
 import io.restassured.specification.RequestSpecification;
