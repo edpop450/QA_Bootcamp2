@@ -19,7 +19,7 @@
         <hamcrestVersion>3.0</hamcrestVersion>
         <jsonVersion>20240303</jsonVersion>
         <gsonVersion>2.9.0</gsonVersion>
-        <suiteFile>testSuites/juiceShopSuite.xml</suiteFile>
+        <suiteFile>testSuites/petStoreSuite.xml</suiteFile>
         <surefireRunnerVersion>3.5.2</surefireRunnerVersion>
     </properties>
 

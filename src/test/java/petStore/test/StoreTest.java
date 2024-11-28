@@ -16,7 +16,6 @@ public class StoreTest extends BaseTest {
         Order order = new Order(
                 utils.generateRandomNumber(2222), 1211,2,
                 utils.getCurrentDateTimeInFormat(),Status.PLACED.getStatus(),true);
-
         // Act: Prepare and send the HTTP POST request to place the order
         httpRequest.contentType("application/json");
         httpRequest.body(utils.convertObjectToJson(order));
